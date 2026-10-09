@@ -1,0 +1,36 @@
+{
+  "name": "hung",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Học làm video: Remotion + HyperFrames + Whisper",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts HelloWorld out/hello.mp4",
+    "render:captions": "remotion render src/index.ts CaptionedVideo out/captioned.mp4",
+    "typecheck": "tsc",
+    "whisper:install": "node whisper/install.mjs",
+    "transcribe": "node whisper/transcribe.mjs",
+    "hf:preview": "hyperframes preview hyperframes",
+    "hf:check": "hyperframes check hyperframes",
+    "hf:render": "hyperframes render hyperframes",
+    "hf:doctor": "hyperframes doctor",
+    "hf:browser": "hyperframes browser ensure"
+  },
+  "dependencies": {
+    "@remotion/captions": "4.0.534",
+    "@remotion/cli": "4.0.534",
+    "@remotion/install-whisper-cpp": "4.0.534",
+    "@remotion/media-utils": "4.0.534",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.534",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "hyperframes": "0.8.143",
+    "typescript": "^7.0.2"
+  }
+}

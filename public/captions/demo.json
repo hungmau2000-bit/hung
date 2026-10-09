@@ -1,0 +1,114 @@
+[
+  {
+    "text": "Xin",
+    "startMs": 300,
+    "endMs": 655,
+    "timestampMs": 477,
+    "confidence": 1
+  },
+  {
+    "text": " chào",
+    "startMs": 695,
+    "endMs": 1075,
+    "timestampMs": 885,
+    "confidence": 1
+  },
+  {
+    "text": " các",
+    "startMs": 1115,
+    "endMs": 1470,
+    "timestampMs": 1292,
+    "confidence": 1
+  },
+  {
+    "text": " bạn,",
+    "startMs": 1510,
+    "endMs": 1890,
+    "timestampMs": 1700,
+    "confidence": 1
+  },
+  {
+    "text": " đây",
+    "startMs": 2290,
+    "endMs": 2645,
+    "timestampMs": 2467,
+    "confidence": 1
+  },
+  {
+    "text": " là",
+    "startMs": 2685,
+    "endMs": 3015,
+    "timestampMs": 2850,
+    "confidence": 1
+  },
+  {
+    "text": " video",
+    "startMs": 3055,
+    "endMs": 3460,
+    "timestampMs": 3257,
+    "confidence": 1
+  },
+  {
+    "text": " demo",
+    "startMs": 3500,
+    "endMs": 3880,
+    "timestampMs": 3690,
+    "confidence": 1
+  },
+  {
+    "text": " phụ",
+    "startMs": 3920,
+    "endMs": 4275,
+    "timestampMs": 4097,
+    "confidence": 1
+  },
+  {
+    "text": " đề",
+    "startMs": 4315,
+    "endMs": 4645,
+    "timestampMs": 4480,
+    "confidence": 1
+  },
+  {
+    "text": " tự",
+    "startMs": 4685,
+    "endMs": 5015,
+    "timestampMs": 4850,
+    "confidence": 1
+  },
+  {
+    "text": " động",
+    "startMs": 5055,
+    "endMs": 5435,
+    "timestampMs": 5245,
+    "confidence": 1
+  },
+  {
+    "text": " bằng",
+    "startMs": 5475,
+    "endMs": 5855,
+    "timestampMs": 5665,
+    "confidence": 1
+  },
+  {
+    "text": " Whisper",
+    "startMs": 5895,
+    "endMs": 6350,
+    "timestampMs": 6122,
+    "confidence": 1
+  },
+  {
+    "text": " và",
+    "startMs": 6390,
+    "endMs": 6720,
+    "timestampMs": 6555,
+    "confidence": 1
+  },
+  {
+    "text": " Remotion.",
+    "startMs": 6760,
+    "endMs": 7265,
+    "timestampMs": 7012,
+    "confidence": 1
+  }
+]

@@ -1,0 +1,8 @@
+node_modules/
+out/
+renders/
+hyperframes/renders/
+# whisper.cpp + model (vài trăm MB -> GB), cài lại bằng `npm run whisper:install`
+whisper.cpp/
+*.wav
+.DS_Store
