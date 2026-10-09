@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <!-- Sinh tự động bởi scripts/build-hf-explainer.mjs từ public/explainer/timeline.json — sửa script, đừng sửa file này -->
+    <style>/* Sinh tự động bởi scripts/prepare-assets.mjs — đừng sửa tay */
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:400;font-display:block;src:url(fonts/be-vietnam-pro-vietnamese-400-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:400;font-display:block;src:url(fonts/be-vietnam-pro-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:400;font-display:block;src:url(fonts/be-vietnam-pro-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:600;font-display:block;src:url(fonts/be-vietnam-pro-vietnamese-600-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:600;font-display:block;src:url(fonts/be-vietnam-pro-latin-ext-600-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:600;font-display:block;src:url(fonts/be-vietnam-pro-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:800;font-display:block;src:url(fonts/be-vietnam-pro-vietnamese-800-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:800;font-display:block;src:url(fonts/be-vietnam-pro-latin-ext-800-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:800;font-display:block;src:url(fonts/be-vietnam-pro-latin-800-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:block;src:url(fonts/jetbrains-mono-vietnamese-400-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:block;src:url(fonts/jetbrains-mono-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:block;src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:block;src:url(fonts/jetbrains-mono-vietnamese-600-normal.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:block;src:url(fonts/jetbrains-mono-latin-ext-600-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:block;src:url(fonts/jetbrains-mono-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+</style>
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: #060a18; }
+#root { position: relative; width: 1920px; height: 1080px; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #f1f5ff; background: #060a18; }
+.bg { position: absolute; inset: 0; background-image: radial-gradient(1200px 700px at 12% 0%, rgba(79,140,255,0.20), rgba(79,140,255,0) 60%), radial-gradient(1000px 650px at 100% 100%, rgba(192,132,252,0.14), rgba(192,132,252,0) 60%); }
+.grid { position: absolute; inset: 0; background-image: radial-gradient(rgba(148,163,255,0.16) 1.4px, rgba(0,0,0,0) 1.6px); background-size: 48px 48px; }
+.scene { position: absolute; inset: 0; }
+.scene-in { position: absolute; inset: 0; opacity: 0; }
+.mono { font-family: 'JetBrains Mono', 'Be Vietnam Pro', monospace; }
+.ch { display: none; }
+.card { background: rgba(13,19,42,0.92); border: 1.5px solid rgba(148,163,255,0.22); border-radius: 26px; box-shadow: 0 30px 80px rgba(0,0,0,0.45); }
+.card-head { font-size: 22px; color: #8b97b8; padding: 18px 28px; border-bottom: 1.5px solid rgba(148,163,255,0.16); }
+
+/* hook */
+.kicker { position: absolute; left: 120px; top: 96px; font-size: 30px; color: #8b97b8; opacity: 0; }
+.hook-lines { position: absolute; left: 0; right: 0; top: 250px; text-align: center; transform-origin: 50% 0%; }
+.big { font-size: 150px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.12; opacity: 0; }
+.strike { position: relative; display: inline-block; color: #8b97b8; }
+.strike-line { position: absolute; left: -6px; right: -6px; top: 54%; height: 12px; border-radius: 6px; background: #f08a5d; transform-origin: 0 50%; }
+.term { position: absolute; left: 260px; width: 1400px; top: 430px; opacity: 0; background: #0a0f22; border: 1.5px solid rgba(148,163,255,0.22); border-radius: 28px; box-shadow: 0 40px 120px rgba(0,0,0,0.55), 0 0 0 1px rgba(240,138,93,0.08); overflow: hidden; }
+.term-bar { display: flex; align-items: center; gap: 12px; padding: 20px 26px; border-bottom: 1.5px solid rgba(148,163,255,0.16); }
+.term-bar i { width: 16px; height: 16px; border-radius: 50%; background: #2a3354; }
+.term-bar span { margin-left: 16px; font-size: 22px; color: #8b97b8; }
+.term-body { padding: 34px 40px 40px; font-size: 40px; line-height: 1.5; }
+.prompt { display: flex; gap: 22px; }
+.ps { color: #f08a5d; font-weight: 600; }
+.typed { color: #f1f5ff; }
+.caret { display: inline-block; width: 20px; height: 46px; margin-left: 4px; background: #f08a5d; vertical-align: -8px; }
+.out { display: flex; align-items: center; gap: 18px; margin-top: 26px; color: #f08a5d; font-size: 36px; opacity: 0; }
+.spin { display: inline-flex; }
+
+/* hyperframes */
+.tag { position: absolute; left: 120px; top: 92px; font-size: 28px; font-weight: 600; letter-spacing: 0.08em; opacity: 0; }
+.title { position: absolute; left: 116px; top: 128px; font-size: 128px; font-weight: 800; letter-spacing: -0.04em; opacity: 0; }
+.uline { position: absolute; left: 6px; bottom: 4px; width: 300px; height: 10px; border-radius: 5px; transform-origin: 0 50%; }
+.chips { position: absolute; left: 1040px; top: 196px; display: flex; gap: 16px; }
+.chip { font-size: 28px; padding: 12px 24px; border: 2px solid rgba(148,163,255,0.22); border-radius: 999px; color: #f1f5ff; opacity: 0; white-space: nowrap; }
+.hf-main { position: absolute; left: 120px; right: 120px; top: 360px; height: 480px; }
+.code { position: absolute; left: 0; top: 0; width: 900px; height: 480px; opacity: 0; font-size: 25px; }
+.cl { padding: 0 28px; line-height: 44px; white-space: pre; opacity: 0; }
+.cl:first-of-type { margin-top: 14px; }
+.ln { display: inline-block; width: 40px; color: #3a4568; }
+.p { color: #8b97b8; } .t { color: #f472b6; } .a { color: #93c5fd; } .s { color: #fde68a; } .x { color: #f1f5ff; } .f { color: #67e8f9; } .n { color: #fdba74; }
+.prev { position: absolute; right: 0; top: 0; width: 760px; height: 480px; opacity: 0; overflow: hidden; }
+.stage { position: relative; margin: 22px 20px 0; height: 300px; border-radius: 18px; background: #050813; border: 1.5px solid rgba(148,163,255,0.16); overflow: hidden; }
+.st-title { position: absolute; left: 0; right: 0; top: 62px; text-align: center; font-size: 76px; font-weight: 800; opacity: 0; }
+.ball { position: absolute; left: 70px; bottom: 50px; width: 64px; height: 64px; border-radius: 50%; background: #34d399; box-shadow: 0 0 40px rgba(52,211,153,0.6); }
+.tbar { position: relative; margin: 46px 40px 0; height: 10px; border-radius: 5px; background: #1a2240; }
+.tfill { position: absolute; inset: 0; border-radius: 5px; background: #34d399; transform-origin: 0 50%; }
+.tbar i { position: absolute; top: -9px; width: 18px; height: 18px; margin-left: -9px; background: #f1f5ff; transform: rotate(45deg); border-radius: 3px; }
+.head { position: absolute; left: 0; top: -22px; width: 4px; height: 54px; margin-left: -2px; background: #fde047; border-radius: 2px; }
+.eq { position: absolute; left: 0; right: 0; top: 480px; display: flex; justify-content: center; align-items: center; gap: 44px; font-size: 96px; font-weight: 800; letter-spacing: -0.03em; opacity: 0; }
+.eq .arrow { color: #34d399; }
+
+/* pipeline */
+.ptitle { position: absolute; left: 0; right: 0; top: 96px; text-align: center; font-size: 84px; font-weight: 800; letter-spacing: -0.035em; opacity: 0; }
+.pnode { position: absolute; top: 420px; width: 270px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: rgba(13,19,42,0.92); border: 2px solid rgba(148,163,255,0.22); border-radius: 26px; opacity: 0; }
+.pnode b { font-size: 36px; font-weight: 800; }
+.pnode span { font-size: 24px; color: #8b97b8; }
+#p-you { left: 60px; border-color: rgba(253,224,71,0.5); }
+#p-gh { left: 1590px; }
+.conn { position: absolute; height: 6px; margin-top: -3px; border-radius: 3px; background: linear-gradient(90deg, #f08a5d, #fde047); transform-origin: 0 50%; }
+.vm { position: absolute; left: 400px; top: 270px; width: 1120px; height: 500px; border-radius: 34px; background: rgba(10,15,34,0.55); opacity: 0; }
+.vm-border { position: absolute; inset: 0; border: 3px dashed rgba(148,163,255,0.45); border-radius: 34px; opacity: 0.35; }
+.vm-head { position: absolute; left: 34px; right: 34px; top: 22px; height: 56px; display: flex; justify-content: space-between; align-items: center; }
+.vm-cloud { display: flex; align-items: center; gap: 12px; font-size: 26px; color: #8b97b8; opacity: 0; }
+.vm-claude { display: flex; align-items: center; gap: 12px; font-size: 30px; padding: 8px 22px 8px 14px; border-radius: 999px; background: rgba(240,138,93,0.14); border: 2px solid rgba(240,138,93,0.55); opacity: 0; }
+.steps { position: absolute; left: 40px; top: 104px; width: 1040px; display: grid; grid-template-columns: repeat(3, 330px); column-gap: 25px; row-gap: 46px; }
+.step { position: relative; height: 158px; border-radius: 22px; background: rgba(13,19,42,0.92); border: 2px solid rgba(148,163,255,0.22); display: flex; align-items: center; gap: 18px; padding: 0 22px; opacity: 0; }
+.step .glow { position: absolute; inset: -2px; border-radius: 22px; border: 2.5px solid var(--c); box-shadow: 0 0 36px -6px var(--c); opacity: 0; }
+.step .num { position: absolute; top: 12px; right: 16px; font-size: 22px; color: #8b97b8; }
+.step .lbl { display: flex; flex-direction: column; gap: 6px; }
+.step .lbl b { font-size: 29px; font-weight: 800; letter-spacing: -0.015em; white-space: nowrap; }
+.step .lbl span { font-size: 20px; color: #8b97b8; white-space: nowrap; }
+
+/* outro */
+.trio { position: absolute; left: 160px; right: 160px; top: 230px; display: flex; justify-content: space-between; transform-origin: 50% 0%; }
+.col { width: 500px; text-align: center; opacity: 0; }
+.col .n { font-size: 220px; font-weight: 800; line-height: 1; letter-spacing: -0.05em; }
+.col .w { font-size: 56px; font-weight: 600; color: #8b97b8; margin-top: 6px; }
+#o-c1 .n { color: #f08a5d; } #o-c2 .n { color: #fde047; } #o-c3 .n { color: #34d399; }
+.tools { display: flex; justify-content: center; gap: 12px; margin-top: 22px; }
+.tools span { font-size: 24px; padding: 8px 18px; border: 2px solid; border-radius: 999px; opacity: 0; }
+.yourturn { position: absolute; left: 0; right: 0; top: 600px; text-align: center; font-size: 132px; font-weight: 800; letter-spacing: -0.04em; opacity: 0; }
+.repo { position: absolute; left: 0; right: 0; top: 790px; display: flex; justify-content: center; align-items: center; gap: 14px; font-size: 32px; color: #8b97b8; opacity: 0; }
+</style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="40.571" data-width="1920" data-height="1080">
+      <div class="bg"></div>
+      <div class="grid"></div>
+<section class="clip scene" id="s-hook" data-start="0" data-duration="7.48" data-track-index="0">
+  <div class="scene-in">
+  <div class="kicker mono" id="h-kicker">// video này được làm ra như thế nào?</div>
+  <div class="hook-lines" id="h-lines" data-layout-allow-overlap>
+    <div class="big" id="h-l1">Không ai <span class="strike">quay<span class="strike-line"></span></span>.</div>
+    <div class="big" id="h-l2">Không ai <span class="strike">dựng<span class="strike-line"></span></span>.</div>
+  </div>
+  <div class="term" id="h-term">
+    <div class="term-bar"><i></i><i></i><i></i><span class="mono">claude code — hung</span></div>
+    <div class="term-body mono">
+      <div class="prompt"><span class="ps">❯</span><span class="typed"><span class="ch">H</span><span class="ch">ã</span><span class="ch">y</span><span class="ch"> </span><span class="ch">s</span><span class="ch">ử</span><span class="ch"> </span><span class="ch">d</span><span class="ch">ụ</span><span class="ch">n</span><span class="ch">g</span><span class="ch"> </span><span class="ch">h</span><span class="ch">y</span><span class="ch">p</span><span class="ch">e</span><span class="ch">r</span><span class="ch">f</span><span class="ch">r</span><span class="ch">a</span><span class="ch">m</span><span class="ch">e</span><span class="ch"> </span><span class="ch">v</span><span class="ch">à</span><span class="ch"> </span><span class="ch">r</span><span class="ch">e</span><span class="ch">m</span><span class="ch">o</span><span class="ch">t</span><span class="ch">i</span><span class="ch">o</span><span class="ch">n</span><span class="ch">,</span><span class="ch"> </span><span class="ch">e</span><span class="ch">l</span><span class="ch">e</span><span class="ch">v</span><span class="ch">e</span><span class="ch">n</span><span class="ch"> </span><span class="ch">l</span><span class="ch">a</span><span class="ch">b</span><span class="ch"> </span><span class="ch">t</span><span class="ch">ạ</span><span class="ch">o</span><span class="ch"> </span><span class="ch">r</span><span class="ch">a</span><span class="ch"> </span><span class="ch">m</span><span class="ch">ộ</span><span class="ch">t</span><span class="ch"> </span><span class="ch">v</span><span class="ch">i</span><span class="ch">d</span><span class="ch">e</span><span class="ch">o</span><span class="ch"> </span><span class="ch">g</span><span class="ch">i</span><span class="ch">ả</span><span class="ch">i</span><span class="ch"> </span><span class="ch">t</span><span class="ch">h</span><span class="ch">í</span><span class="ch">c</span><span class="ch">h</span><span class="ch"> </span><span class="ch">v</span><span class="ch">ề</span><span class="ch"> </span><span class="ch">v</span><span class="ch">i</span><span class="ch">ệ</span><span class="ch">c</span><span class="ch"> </span><span class="ch">h</span><span class="ch">y</span><span class="ch">p</span><span class="ch">e</span><span class="ch">r</span><span class="ch">f</span><span class="ch">r</span><span class="ch">a</span><span class="ch">m</span><span class="ch">e</span><span class="ch">,</span><span class="ch"> </span><span class="ch">r</span><span class="ch">e</span><span class="ch">m</span><span class="ch">o</span><span class="ch">t</span><span class="ch">i</span><span class="ch">o</span><span class="ch">n</span><span class="ch">,</span><span class="ch"> </span><span class="ch">e</span><span class="ch">l</span><span class="ch">e</span><span class="ch">v</span><span class="ch">e</span><span class="ch">n</span><span class="ch"> </span><span class="ch">l</span><span class="ch">a</span><span class="ch">b</span><span class="ch"> </span><span class="ch">l</span><span class="ch">à</span><span class="ch"> </span><span class="ch">g</span><span class="ch">ì</span><span class="ch">…</span><span class="caret" id="h-caret"></span></span></div>
+      <div class="out" id="h-out"><span class="spin" id="h-spark"><svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="#f08a5d" stroke-width="5.5" stroke-linecap="round"><line x1="24" y1="5" x2="24" y2="19" transform="rotate(0 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(45 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(90 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(135 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(180 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(225 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(270 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(315 24 24)"/></svg></span><span>Claude đang lập kế hoạch…</span></div>
+    </div>
+  </div>
+  </div>
+</section>
+<section class="clip scene" id="s-hyperframes" data-start="7.48" data-duration="11.1" data-track-index="1">
+  <div class="scene-in">
+  <div class="tag mono" style="color:#34d399" id="f-tag">02 / 03</div>
+  <div class="title" id="f-title">HyperFrames<span class="uline" style="background:#34d399"></span></div>
+  <div class="chips" id="f-chips"><span class="chip" style="border-color:#34d399;color:#34d399">mã nguồn mở</span><span class="chip">của HeyGen</span><span class="chip">HTML · CSS · GSAP</span></div>
+  <div class="hf-main" id="f-main">
+    <div class="card code mono" id="f-code"><div class="card-head mono">index.html</div><div class="cl" id="c-0"><span class="ln">1</span><span class="p">&lt;</span><span class="t">div</span><span class="a"> data-composition-id</span><span class="p">=</span><span class="s">&quot;intro&quot;</span></div><div class="cl" id="c-1"><span class="ln">2</span><span class="a">     data-duration</span><span class="p">=</span><span class="s">&quot;10&quot;</span><span class="p">&gt;</span></div><div class="cl" id="c-2"><span class="ln">3</span><span class="p">  &lt;</span><span class="t">h1</span><span class="a"> id</span><span class="p">=</span><span class="s">&quot;title&quot;</span><span class="a"> class</span><span class="p">=</span><span class="s">&quot;clip&quot;</span><span class="p">&gt;</span><span class="x">Xin chào</span><span class="p">&lt;/</span><span class="t">h1</span><span class="p">&gt;</span></div><div class="cl" id="c-3"><span class="ln">4</span><span class="p">&lt;/</span><span class="t">div</span><span class="p">&gt;</span></div><div class="cl" id="c-4"><span class="ln">5</span><span class="p">&lt;</span><span class="t">script</span><span class="p">&gt;</span></div><div class="cl" id="c-5"><span class="ln">6</span><span class="x">  tl.</span><span class="f">from</span><span class="p">(</span><span class="s">&quot;#title&quot;</span><span class="p">, { </span><span class="a">y</span><span class="p">: </span><span class="n">80</span><span class="p">, </span><span class="a">opacity</span><span class="p">: </span><span class="n">0</span><span class="p"> });</span></div><div class="cl" id="c-6"><span class="ln">7</span><span class="x">  tl.</span><span class="f">to</span><span class="p">(</span><span class="s">&quot;#ball&quot;</span><span class="p">, { </span><span class="a">x</span><span class="p">: </span><span class="n">520</span><span class="p">, </span><span class="a">ease</span><span class="p">: </span><span class="s">&quot;power3&quot;</span><span class="p"> });</span></div><div class="cl" id="c-7"><span class="ln">8</span><span class="p">&lt;/</span><span class="t">script</span><span class="p">&gt;</span></div></div>
+    <div class="card prev" id="f-prev">
+      <div class="card-head mono">xem trước · GSAP timeline</div>
+      <div class="stage">
+        <div class="st-title" id="f-st-title">Xin chào</div>
+        <div class="ball" id="f-ball"></div>
+      </div>
+      <div class="tbar"><div class="tfill" id="f-tfill"></div><i style="left:0%"></i><i style="left:40%"></i><i style="left:100%"></i><div class="head" id="f-head"></div></div>
+    </div>
+  </div>
+  <div class="eq" id="f-eq" data-layout-allow-overlap><span>Biết làm web</span><span class="arrow">→</span><span>làm được <b style="color:#34d399">video</b></span></div>
+  </div>
+</section>
+<section class="clip scene" id="s-pipeline" data-start="18.58" data-duration="15.86" data-track-index="2">
+  <div class="scene-in">
+  <div class="ptitle" id="p-title">Phiên này chạy thế nào?</div>
+  <div class="pnode" id="p-you"><div class="ic" style="color:#fde047"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="8"/><path d="M8 42c2-9 9-13 16-13s14 4 16 13"/></svg></div><b>Bạn</b><span>1 câu lệnh</span></div>
+  <div class="conn" id="p-a1" style="left:336px;top:520px;width:58px"></div>
+  <div class="vm" id="p-vm"><div class="vm-border"></div>
+    <div class="vm-head">
+      <span class="vm-cloud" id="p-cloud"><svg width="34" height="34" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 36h22a8 8 0 0 0 1-16 12 12 0 0 0-23-3A9 9 0 0 0 14 36z"/></svg><span>Máy ảo trên đám mây</span></span>
+      <span class="vm-claude" id="p-claude"><svg width="30" height="30" viewBox="0 0 48 48" fill="none" stroke="#f08a5d" stroke-width="5.5" stroke-linecap="round"><line x1="24" y1="5" x2="24" y2="19" transform="rotate(0 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(45 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(90 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(135 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(180 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(225 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(270 24 24)"/><line x1="24" y1="5" x2="24" y2="19" transform="rotate(315 24 24)"/></svg><b>Claude Code</b></span>
+    </div>
+    <div class="steps">
+    <div class="step" id="p-plan" style="--c:#f08a5d">
+      <div class="glow"></div>
+      <div class="num mono">1</div>
+      <div class="ic" style="color:#f08a5d"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="6" width="30" height="36" rx="5"/><path d="M16 16h16M16 24h16M16 32h9"/></svg></div>
+      <div class="lbl"><b>Lập kế hoạch</b><span>chia 7 cảnh</span></div>
+    </div>
+    <div class="step" id="p-script" style="--c:#f08a5d">
+      <div class="glow"></div>
+      <div class="num mono">2</div>
+      <div class="ic" style="color:#f08a5d"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 38l4-12 18-18 8 8-18 18z"/><path d="M28 12l8 8"/></svg></div>
+      <div class="lbl"><b>Viết kịch bản</b><span>248 từ tiếng Việt</span></div>
+    </div>
+    <div class="step" id="p-el" style="--c:#c084fc">
+      <div class="glow"></div>
+      <div class="num mono">3</div>
+      <div class="ic" style="color:#c084fc"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24v0M13 18v12M20 10v28M27 15v18M34 20v8M41 24v0"/></svg></div>
+      <div class="lbl"><b>ElevenLabs</b><span>lồng tiếng + Scribe</span></div>
+    </div>
+    <div class="step" id="p-hf" style="--c:#34d399">
+      <div class="glow"></div>
+      <div class="num mono">4</div>
+      <div class="ic" style="color:#34d399"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 14l-9 10 9 10M32 14l9 10-9 10M27 10l-6 28"/></svg></div>
+      <div class="lbl"><b>HyperFrames</b><span>dựng cảnh HTML</span></div>
+    </div>
+    <div class="step" id="p-rm" style="--c:#4f8cff">
+      <div class="glow"></div>
+      <div class="num mono">5</div>
+      <div class="ic" style="color:#4f8cff"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="9" width="36" height="30" rx="6"/><path d="M20 17l11 7-11 7z"/></svg></div>
+      <div class="lbl"><b>Remotion</b><span>ghép + phụ đề</span></div>
+    </div>
+    <div class="step" id="p-render" style="--c:#f1f5ff">
+      <div class="glow"></div>
+      <div class="num mono">6</div>
+      <div class="ic" style="color:#f1f5ff"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="36" height="24" rx="4"/><path d="M16 40h16M24 34v6"/><path d="M21 17l8 5-8 5z"/></svg></div>
+      <div class="lbl"><b>Render</b><span>MP4 1920×1080</span></div>
+    </div></div>
+  </div>
+  <div class="conn" id="p-a2" style="left:1526px;top:520px;width:58px"></div>
+  <div class="pnode" id="p-gh"><div class="ic"><svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="10" r="5"/><circle cx="14" cy="38" r="5"/><circle cx="34" cy="16" r="5"/><path d="M14 15v18M34 21c0 9-12 8-18 13"/></svg></div><b>GitHub</b><span>git push</span></div>
+  </div>
+</section>
+<section class="clip scene" id="s-outro" data-start="34.44" data-duration="6.131" data-track-index="3">
+  <div class="scene-in">
+  <div class="trio" id="o-trio">
+    <div class="col" id="o-c1"><div class="n">1</div><div class="w">câu lệnh</div></div>
+    <div class="col" id="o-c2"><div class="n">3</div><div class="w">công cụ</div>
+      <div class="tools"><span style="border-color:#4f8cff;color:#4f8cff">Remotion</span><span style="border-color:#34d399;color:#34d399">HyperFrames</span><span style="border-color:#c084fc;color:#c084fc">ElevenLabs</span></div></div>
+    <div class="col" id="o-c3"><div class="n">1</div><div class="w">video</div></div>
+  </div>
+  <div class="yourturn" id="o-turn">Giờ đến lượt bạn.</div>
+  <div class="repo mono" id="o-repo"><svg width="30" height="30" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="10" r="5"/><circle cx="14" cy="38" r="5"/><circle cx="34" cy="16" r="5"/><path d="M14 15v18M34 21c0 9-12 8-18 13"/></svg><span>github.com/hungmau2000-bit/hung</span></div>
+  </div>
+</section>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s-hook .scene-in", {"opacity":0,"y":0}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.25,"ease":"none"}, 0);
+      tl.to("#s-hook .scene-in", {"opacity":0,"duration":0.25,"ease":"none"}, 7.21);
+      tl.fromTo("#h-kicker", {"opacity":0,"y":-20}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.6,"ease":"power3.out"}, 0.15);
+      tl.fromTo("#h-l1", {"opacity":0,"y":60}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.55,"ease":"power3.out"}, 1.51);
+      tl.fromTo("#h-l1 .strike-line", {scaleX:0}, {scaleX:1,duration:0.35,ease:"power2.out"}, 2.06);
+      tl.fromTo("#h-l2", {"opacity":0,"y":60}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.55,"ease":"power3.out"}, 2.87);
+      tl.fromTo("#h-l2 .strike-line", {scaleX:0}, {scaleX:1,duration:0.35,ease:"power2.out"}, 3.37);
+      tl.to("#h-kicker", {"opacity":0,"duration":0.3}, 3.74);
+      tl.to("#h-lines", {"y":-175,"scale":0.62,"opacity":0.45,"duration":0.7,"ease":"power3.inOut"}, 3.74);
+      tl.fromTo("#h-term", {"opacity":0,"y":120,"scale":0.96}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.7,"ease":"power3.out"}, 3.89);
+      tl.to("#s-hook .ch", { display: "inline", duration: 0.001, stagger: 0.019 }, 4.39);
+      tl.fromTo("#h-out", {"opacity":0,"y":16}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.4,"ease":"power3.out"}, 6.83);
+      tl.to("#h-spark", {"rotation":180,"duration":1.2,"ease":"none"}, 6.83);
+      tl.fromTo("#s-hyperframes .scene-in", {"opacity":0,"y":0}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.25,"ease":"none"}, 7.48);
+      tl.to("#s-hyperframes .scene-in", {"opacity":0,"duration":0.25,"ease":"none"}, 18.31);
+      tl.fromTo("#f-tag", {"opacity":0,"y":-16}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.6,"ease":"power3.out"}, 7.63);
+      tl.fromTo("#f-title", {"opacity":0,"y":50}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.7,"ease":"power3.out"}, 8.28);
+      tl.fromTo("#f-title .uline", {scaleX:0}, {scaleX:1,duration:0.6,ease:"power3.out"}, 8.78);
+      tl.fromTo("#f-chips .chip", {opacity:0,y:20}, {opacity:1,y:0,duration:0.45,ease:"power3.out",stagger:0.18}, 9.54);
+      tl.fromTo("#f-code", {"opacity":0,"y":60}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.6,"ease":"power3.out"}, 11.22);
+      tl.fromTo("#f-prev", {"opacity":0,"y":60}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.6,"ease":"power3.out"}, 11.42);
+      tl.fromTo("#f-code .cl", {opacity:0,x:-20}, {opacity:1,x:0,duration:0.3,ease:"power2.out",stagger:0.16}, 12.46);
+      tl.fromTo("#f-st-title", {opacity:0,y:80}, {opacity:1,y:0,duration:0.9,ease:"power3.out"}, 14.73);
+      tl.fromTo("#f-ball", {x:0}, {x:520,duration:0.75,ease:"power3.inOut"}, 15.33);
+      tl.fromTo("#f-tfill", {scaleX:0}, {scaleX:1,duration:1.65,ease:"none"}, 14.73);
+      tl.fromTo("#f-head", {x:0}, {x:640,duration:1.65,ease:"none"}, 14.73);
+      tl.to("#f-main, #f-chips", {"opacity":0.06,"duration":0.5,"ease":"power2.out"}, 16.33);
+      tl.fromTo("#f-eq", {"opacity":0,"y":40,"scale":0.94}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.6,"ease":"power3.out"}, 16.43);
+      tl.to("#f-eq .arrow", {"x":12,"duration":0.5,"ease":"sine.inOut","yoyo":true,"repeat":1}, 17.04);
+      tl.fromTo("#s-pipeline .scene-in", {"opacity":0,"y":0}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.25,"ease":"none"}, 18.58);
+      tl.to("#s-pipeline .scene-in", {"opacity":0,"duration":0.25,"ease":"none"}, 34.17);
+      tl.fromTo("#p-title", {"opacity":0,"y":-30}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.6,"ease":"power3.out"}, 18.67);
+      tl.fromTo("#p-you", {"opacity":0,"x":-60}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.6,"ease":"power3.out"}, 20.57);
+      tl.fromTo("#p-a1", {scaleX:0}, {scaleX:1,duration:0.45,ease:"power2.out"}, 21.55);
+      tl.fromTo("#p-vm", {"opacity":0,"scale":0.95}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.6,"ease":"power3.out"}, 21.8);
+      tl.fromTo("#p-claude", {"opacity":0,"y":-14}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.45,"ease":"power3.out"}, 21.95);
+      tl.fromTo("#p-cloud", {"opacity":0,"y":-14}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.45,"ease":"power3.out"}, 23.38);
+      tl.to("#p-vm .vm-border", {"opacity":1,"duration":0.6}, 23.38);
+      tl.fromTo("#p-plan", {"opacity":0,"y":26,"scale":0.94}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.45,"ease":"power3.out"}, 25.09);
+      tl.to("#p-plan .glow", {"opacity":1,"duration":0.3}, 25.09);
+      tl.fromTo("#p-script", {"opacity":0,"y":26,"scale":0.94}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.45,"ease":"power3.out"}, 25.97);
+      tl.to("#p-script .glow", {"opacity":1,"duration":0.3}, 25.97);
+      tl.fromTo("#p-el", {"opacity":0,"y":26,"scale":0.94}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.45,"ease":"power3.out"}, 27.05);
+      tl.to("#p-el .glow", {"opacity":1,"duration":0.3}, 27.05);
+      tl.fromTo("#p-hf", {"opacity":0,"y":26,"scale":0.94}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.45,"ease":"power3.out"}, 28.81);
+      tl.to("#p-hf .glow", {"opacity":1,"duration":0.3}, 28.81);
+      tl.fromTo("#p-rm", {"opacity":0,"y":26,"scale":0.94}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.45,"ease":"power3.out"}, 30.57);
+      tl.to("#p-rm .glow", {"opacity":1,"duration":0.3}, 30.57);
+      tl.fromTo("#p-render", {"opacity":0,"y":26,"scale":0.94}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.45,"ease":"power3.out"}, 32.41);
+      tl.to("#p-render .glow", {"opacity":1,"duration":0.3}, 32.41);
+      tl.fromTo("#p-a2", {scaleX:0}, {scaleX:1,duration:0.45,ease:"power2.out"}, 33.34);
+      tl.fromTo("#p-gh", {"opacity":0,"x":60}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.55,"ease":"power3.out"}, 33.61);
+      tl.fromTo("#s-outro .scene-in", {"opacity":0,"y":0}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.25,"ease":"none"}, 34.44);
+      tl.to("#s-outro .scene-in", {"opacity":0,"duration":0.6,"ease":"power1.in"}, 39.921);
+      tl.fromTo("#o-c1", {"opacity":0,"y":50,"scale":0.9}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.5,"ease":"back.out(1.6)"}, 34.46);
+      tl.fromTo("#o-c2", {"opacity":0,"y":50,"scale":0.9}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.5,"ease":"back.out(1.6)"}, 35.34);
+      tl.fromTo("#o-c2 .tools span", {opacity:0,y:14}, {opacity:1,y:0,duration:0.35,stagger:0.12,ease:"power2.out"}, 35.74);
+      tl.fromTo("#o-c3", {"opacity":0,"y":50,"scale":0.9}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.5,"ease":"back.out(1.6)"}, 36.22);
+      tl.to("#o-trio", {"y":-150,"scale":0.78,"duration":0.7,"ease":"power3.inOut"}, 37.64);
+      tl.fromTo("#o-turn", {"opacity":0,"y":50,"scale":0.95}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.7,"ease":"power3.out"}, 37.79);
+      tl.fromTo("#o-repo", {"opacity":0,"y":20}, {"opacity":1,"x":0,"y":0,"scale":1,"duration":0.5,"ease":"power3.out"}, 38.94);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

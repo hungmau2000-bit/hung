@@ -3,6 +3,7 @@ import type { Caption } from "@remotion/captions";
 import { getVideoMetadata } from "@remotion/media-utils";
 import { CaptionedVideo, captionedVideoSchema, type CaptionedVideoProps } from "./CaptionedVideo";
 import { HelloWorld } from "./HelloWorld";
+import { Explainer, type ExplainerProps } from "./explainer/Explainer";
 
 const FPS = 30;
 
@@ -17,6 +18,20 @@ export const RemotionRoot: React.FC = () => {
         width={1920}
         height={1080}
         defaultProps={{ title: "Học làm video với Remotion", subtitle: "MTC Studio" }}
+      />
+      <Composition
+        id="Explainer"
+        component={Explainer}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        durationInFrames={10 * FPS}
+        defaultProps={{} as ExplainerProps}
+        calculateMetadata={async () => {
+          const load = (f: string) => fetch(staticFile(`explainer/${f}`)).then((r) => r.json());
+          const [timeline, hfMap, wave] = await Promise.all([load("timeline.json"), load("hf-map.json"), load("waveform.json")]);
+          return { durationInFrames: Math.ceil((timeline.durationMs / 1000) * FPS), props: { timeline, hfMap, wave } };
+        }}
       />
       <Composition
         id="CaptionedVideo"

@@ -69,4 +69,43 @@ HyperFrames cũng tự bóc phụ đề được: `npx hyperframes transcribe pu
 
 Thư mục `hyperframes/` có sẵn `CLAUDE.md` — mở Claude Code trong đó rồi bảo kiểu *"làm intro 15 giây giới thiệu homestay"* là nó tự viết composition.
 
+## Video giải thích (Remotion + HyperFrames + ElevenLabs)
+
+Bản dựng sẵn: [`showcase/explainer.mp4`](showcase/explainer.mp4), dài 78 giây, 1920×1080, giọng đọc tiếng Việt, phụ đề tô màu từng từ.
+
+Mỗi công cụ làm đúng phần mình giỏi:
+
+| Công cụ | Làm gì trong video |
+|---|---|
+| **ElevenLabs** | Đọc kịch bản (giọng *Phan Hưng*, model `eleven_v4`), sau đó **Scribe** nghe lại để lấy mốc thời gian từng chữ |
+| **HyperFrames** | Dựng 4 cảnh motion graphics bằng HTML + GSAP: mở đầu, HyperFrames, sơ đồ "phiên này chạy thế nào", kết |
+| **Remotion** | Bàn dựng tổng. Tự dựng 3 cảnh bằng React (Remotion, ElevenLabs với sóng âm thật, hậu trường), rồi ghép cảnh HyperFrames, giọng đọc, phụ đề, thanh tiến độ và render ra MP4 |
+
+Mọi animation canh theo **giờ thật của từng chữ** (`public/explainer/timeline.json`): chữ nào được đọc thì hình nhảy đúng lúc đó.
+
+```
+src/explainer/script.ts           kịch bản 7 cảnh (sửa chữ ở đây)
+src/explainer/*.tsx               3 cảnh Remotion + composition "Explainer"
+src/components/Captions.tsx       phụ đề tô màu từng từ (dùng chung với CaptionedVideo)
+scripts/align-explainer.mjs       khớp kịch bản ↔ giờ Scribe -> timeline.json + waveform.json
+scripts/build-hf-explainer.mjs    sinh hyperframes/explainer/index.html từ timeline.json
+scripts/explainer-frames.mjs      trích khung hình thật cho cảnh "hậu trường"
+public/explainer/                 voice.mp3, scribe-words.json, timeline.json, hf-scenes.mp4, ...
+```
+
+Dựng lại video (đã có sẵn giọng đọc + mốc thời gian trong repo):
+
+```bash
+npm run explainer        # = assets → align → hf (check + render) → frames → render
+# hoặc từng bước:
+npm run explainer:hf     # dựng + kiểm tra + render cảnh HyperFrames
+npm run explainer:render # ghép tổng bằng Remotion -> out/explainer.mp4
+npm run studio           # mở Studio, chọn "Explainer" để xem/chỉnh
+```
+
+Đổi kịch bản: sửa `src/explainer/script.ts`, lồng tiếng lại bằng ElevenLabs, rồi thay `public/explainer/voice.mp3` + `scribe-words.json` (file words của Scribe) và chạy `npm run explainer`.
+
+> Máy không tải được Chrome của Remotion (mạng công ty chặn chẳng hạn) thì trỏ tới Chrome có sẵn:
+> `REMOTION_BROWSER_EXECUTABLE=/đường/dẫn/chrome npm run explainer:render`
+
 Docs: [Remotion](https://www.remotion.dev/docs) · [HyperFrames](https://hyperframes.heygen.com) · [whisper.cpp](https://github.com/ggml-org/whisper.cpp)

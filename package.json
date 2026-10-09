@@ -15,7 +15,13 @@
     "hf:check": "hyperframes check hyperframes",
     "hf:render": "hyperframes render hyperframes",
     "hf:doctor": "hyperframes doctor",
-    "hf:browser": "hyperframes browser ensure"
+    "hf:browser": "hyperframes browser ensure",
+    "explainer:assets": "node scripts/prepare-assets.mjs",
+    "explainer:align": "node scripts/align-explainer.mjs",
+    "explainer:hf": "node scripts/build-hf-explainer.mjs && hyperframes check hyperframes/explainer && hyperframes render hyperframes/explainer -o public/explainer/hf-scenes.mp4",
+    "explainer:frames": "node scripts/explainer-frames.mjs",
+    "explainer:render": "remotion render src/index.ts Explainer out/explainer.mp4",
+    "explainer": "npm run explainer:assets && npm run explainer:align && npm run explainer:hf && npm run explainer:frames && npm run explainer:render"
   },
   "dependencies": {
     "@remotion/captions": "4.0.534",
@@ -28,8 +34,11 @@
     "zod": "4.5.4"
   },
   "devDependencies": {
+    "@fontsource/be-vietnam-pro": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
     "@types/node": "^26.6.4",
     "@types/react": "^19.3.0",
+    "gsap": "3.14.2",
     "hyperframes": "0.8.143",
     "typescript": "^7.0.2"
   }
