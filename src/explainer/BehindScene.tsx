@@ -12,11 +12,11 @@ const Incident: React.FC<{ top: number; problem: string; fix: string; tProblem: 
   return (
     <div style={{ position: "absolute", left: 120, top, width: 1680, height: 112, display: "flex", alignItems: "center", gap: 26, padding: "0 30px", borderRadius: 24, background: "rgba(13,19,42,0.92)", border: `1.5px solid ${C.cardBorder}`, ...rise(frame, tProblem, { y: 30, dur: 14 }) }}>
       <Badge ok={false} />
-      <div style={{ width: 700, fontSize: 30, fontWeight: 600, color: fixed > 0.5 ? C.muted : C.ink, textDecoration: fixed > 0.5 ? "line-through" : "none", textDecorationColor: RED }}>{problem}</div>
+      <div style={{ width: 600, fontSize: 28, fontWeight: 600, color: fixed > 0.5 ? C.muted : C.ink, textDecoration: fixed > 0.5 ? "line-through" : "none", textDecorationColor: RED }}>{problem}</div>
       <div style={{ width: 70, height: 5, borderRadius: 3, background: C.hf, transform: `scaleX(${fixed})`, transformOrigin: "0 50%" }} />
       <div style={{ display: "flex", alignItems: "center", gap: 18, opacity: fixed, transform: `translateX(${(1 - fixed) * 20}px)` }}>
         <Badge ok />
-        <div style={{ fontSize: 30, fontWeight: 700 }}>{fix}</div>
+        <div style={{ fontSize: 28, fontWeight: 700, whiteSpace: "nowrap" }}>{fix}</div>
       </div>
     </div>
   );
@@ -51,7 +51,7 @@ export const BehindScene: React.FC<{ scene: SceneTiming }> = ({ scene }) => {
       </div>
 
       <Incident top={278} problem="Máy ảo chặn CDN (lỗi 403) — không tải được GSAP" fix="Tự đóng gói GSAP + font, chạy offline" tProblem={w("máy", 0, -0.2)} tFix={w("đóng", 0, -0.2)} />
-      <Incident top={408} problem="Chặn huggingface.co — không tải được Whisper" fix="Chuyển sang ElevenLabs Scribe · 248/248 từ khớp" tProblem={w("không", 1, -0.2)} tFix={w("chuyển", 0, -0.2)} />
+      <Incident top={408} problem="Chặn huggingface.co — không tải được Whisper" fix="Đổi sang ElevenLabs Scribe · khớp 248/248 từ" tProblem={w("không", 1, -0.2)} tFix={w("chuyển", 0, -0.2)} />
 
       {/* Soát lỗi: khung hình thật của video này */}
       <div style={{ position: "absolute", left: 120, top: 538, width: 1680, height: 300, borderRadius: 24, background: "rgba(13,19,42,0.92)", border: `1.5px solid ${C.cardBorder}`, ...rise(frame, tReview, { y: 30, dur: 14 }) }}>
