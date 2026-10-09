@@ -104,6 +104,11 @@ npm run studio           # mở Studio, chọn "Explainer" để xem/chỉnh
 ```
 
 Đổi kịch bản: sửa `src/explainer/script.ts`, lồng tiếng lại bằng ElevenLabs, rồi thay `public/explainer/voice.mp3` + `scribe-words.json` (file words của Scribe) và chạy `npm run explainer`.
+File ElevenLabs trả về khá nhỏ tiếng (khoảng −30 LUFS), nên chuẩn hoá trước khi dựng, mức đăng mạng xã hội là khoảng −16 LUFS:
+
+```bash
+npx remotion ffmpeg -i giong-goc.mp3 -af loudnorm=I=-16:TP=-1.5:LRA=11 -ar 44100 -ac 1 -b:a 160k public/explainer/voice.mp3
+```
 
 > Máy không tải được Chrome của Remotion (mạng công ty chặn chẳng hạn) thì trỏ tới Chrome có sẵn:
 > `REMOTION_BROWSER_EXECUTABLE=/đường/dẫn/chrome npm run explainer:render`
